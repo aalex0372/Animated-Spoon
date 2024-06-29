@@ -15,7 +15,7 @@ __Initialization and Setup:__
 
     > 'httpx' is used for making HTTP requests.
 
-2. API Tokens:
+2. APIs and API Tokens:
     > 'TELEGRAM_API_TOKEN' for Telegram API.
 
     > 'PERSPECTIVE_API_TOKEN' for Google Perspective API.
@@ -39,23 +39,37 @@ __Message Handler ('handle_text_messages'):__
 3. Swearing Detection ('swearing_local_test'):
     >Splits the message into words and checks against the loaded list of offensive words.
 
-    >If offensive words are found, calls 'handle_method' for message processing (e.g., deletion or replacement).
+    >If offensive words are found, calls 'handle_method' for message processing.
 
 4. Local Check Flow:
     >If no offensive words are found locally, invokes 'perspectiveapi' for additional toxicity evaluation.
 
-__Local Swearing Detection ('swearing_local_test'):__
->Checks each word in the message against the loaded offensive words list.
-
->If offensive words are detected, proceeds to 'handle_method'.
-
 __Handling Methods ('handle_method'):__
 
->Executes actions based on group-specific settings:
-
+_Executes actions based on group-specific settings:_
 >Deletes the message.
 
 >Sends a warning.
 
 >Calls 'OpenAI' api for replacement if specified.
 
+__Perspective API Usage ('perspectiveapi'):__
+>Sends the message text to Google Perspective API for toxicity analysis.
+
+>Compares the toxicity level against the group's defined threshold.
+
+>If the message is toxic, triggers 'handle_method'.
+
+__OpenAI API Usage ('openaiapi'):__
+>If specified by the method, utilizes OpenAI API to replace offensive language with neutral equivalents.
+
+>Sends the processed message back to the group.
+
+
+__Error Logging ('log_error'):__
+>Logs errors occurring during any stage of message processing.
+
+>Sends error messages to the bot administrator for further analysis and resolution.
+
+# Conclusion:
+___This bot efficiently utilizes asynchronous operations to handle message processing, API calls, and real-time data management. It ensures a high degree of automation and message security within Telegram chats, effectively monitoring and filtering offensive content while preserving message integrity and structure.___
