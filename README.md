@@ -79,6 +79,9 @@ __Clone the Repository:__
 git clone https://github.com/aalex0372/Animated-Spoon.git
 cd Animated-Spoon
 ```
+```bash
+pip install -r requirements.txt
+```
 
 
 # Conclusion:
