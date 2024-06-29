@@ -71,5 +71,15 @@ __Error Logging ('log_error'):__
 
 >Sends error messages to the bot administrator for further analysis and resolution.
 
+
+
+__Clone the Repository:__
+
+```bash
+git clone https://github.com/your_username/Animated-Spoon.git
+cd Animated-Spoon
+```
+
+
 # Conclusion:
 ___This bot efficiently utilizes asynchronous operations to handle message processing, API calls, and real-time data management. It ensures a high degree of automation and message security within Telegram chats, effectively monitoring and filtering offensive content while preserving message integrity and structure.___
