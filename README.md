@@ -76,7 +76,7 @@ __Error Logging ('log_error'):__
 __Clone the Repository:__
 
 ```bash
-git clone https://github.com/your_username/Animated-Spoon.git
+git clone https://github.com/aalex0372/Animated-Spoon.git
 cd Animated-Spoon
 ```
 
