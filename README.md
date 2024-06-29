@@ -20,7 +20,7 @@ __Initialization and Setup:__
     
     > 'TELEGRAM_API_TOKEN' for Telegram API.
 
-    > 'PERSPECTIVE_API_TOKEN' for Google Perspective API.
+    > 'PERSPECTIVE_API_TOKEN' for [Google Perspective API](https://www.perspectiveapi.com).
 
 __Message Handler ('handle_text_messages'):__
 1. Function Purpose:
