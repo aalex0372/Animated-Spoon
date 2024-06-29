@@ -16,8 +16,46 @@ __Initialization and Setup:__
     > 'httpx' is used for making HTTP requests.
 
 2. API Tokens:
+    > 'TELEGRAM_API_TOKEN' for Telegram API.
 
+    > 'PERSPECTIVE_API_TOKEN' for Google Perspective API.
 
+    > 'PERSPECTIVE_API_TOKEN' for Google Perspective API.
 
+__Loading Offensive Vocabulary:__
+> Initially, the bot loads a list of offensive words from the Redis database.
 
+__Message Handler ('handle_text_messages'):__
+1. Function Purpose:
+    >Handles incoming text messages from users.
+
+    >Validates message length and correctness.
+
+2. Group Information Retrieval:
+    >Retrieves previously saved group information from Redis.
+
+    >Throws an exception if data is missing or invalid.
+
+3. Swearing Detection ('swearing_local_test'):
+    >Splits the message into words and checks against the loaded list of offensive words.
+
+    >If offensive words are found, calls 'handle_method' for message processing (e.g., deletion or replacement).
+
+4. Local Check Flow:
+    >If no offensive words are found locally, invokes 'perspectiveapi' for additional toxicity evaluation.
+
+__Local Swearing Detection ('swearing_local_test'):__
+>Checks each word in the message against the loaded offensive words list.
+
+>If offensive words are detected, proceeds to 'handle_method'.
+
+__Handling Methods ('handle_method'):__
+
+>Executes actions based on group-specific settings:
+
+>Deletes the message.
+
+>Sends a warning.
+
+>Calls 'OpenAI' api for replacement if specified.
 
