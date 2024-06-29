@@ -16,9 +16,9 @@ __Initialization and Setup:__
     > 'httpx' is used for making HTTP requests.
 
 2. APIs and API Tokens:
+    > 'OPENAI_API_TOKEN' for OpenAI API.
+    
     > 'TELEGRAM_API_TOKEN' for Telegram API.
-
-    > 'PERSPECTIVE_API_TOKEN' for Google Perspective API.
 
     > 'PERSPECTIVE_API_TOKEN' for Google Perspective API.
 
