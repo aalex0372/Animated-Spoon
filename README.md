@@ -82,6 +82,9 @@ cd Animated-Spoon
 ```bash
 pip install -r requirements.txt
 ```
+```bash
+pip install --upgrade -r requirements.txt
+```
 
 
 # Conclusion:
